@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Pitch Deck 101--A Foolproof Formula for Any Business (With Template)
-date: 2019-08-23 01:00:00 +0300
-description: A simple pitch deck framework and template for attracting serious investors. # Add post description (optional)
-img: pitchdeckhelp.jpg # Add image post (optional)
+title: Template Post
+date: 2020-05-15 22:12:00 +0200
+description: Simple Template
+img: # pitchdeckhelp.jpg # Add image post (optional)
 tags: [pitch deck, fundraising, entrepreneurship, startup, startups] # add tag
 ---
 Over the past several years, I have been consulting and building pitch decks for startups across Silicon Valley, New York, China, and all over the world, and have seen good companies live or die based on the quality of their investor decks and presentations.

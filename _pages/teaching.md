@@ -1,8 +1,8 @@
 ---
 layout: page
-permalink: /coding/
-title: coding
-description: Some of my favourite code snippets
+permalink: /teaching/
+title: teaching
+description: Some ressources from the classroom
 nav: true
 ---
 

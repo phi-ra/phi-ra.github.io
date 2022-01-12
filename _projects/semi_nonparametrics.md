@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Semi- and Non-Parametrics
-description: a project with a background image
+description: Neural Nets for Statisticians
 img: /assets/img/graph_polynomial.png
 importance: 2
 category: work

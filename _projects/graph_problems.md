@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Graphs
-description: a project with a background image
+description: Research on Networks
 img: /assets/img/network_img.png
 importance: 1
 category: work

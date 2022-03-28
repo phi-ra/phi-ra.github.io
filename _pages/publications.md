@@ -15,3 +15,65 @@ nav: true
 {% endfor %}
 
 </div>
+
+<br>
+
+
+<header class="post-header">
+    <h1 class="post-title">conferences</h1>
+    <p class="post-description"></p>
+</header>
+
+
+<article>
+    <div class="publications">
+
+
+<h2 class="year">2021</h2>
+<ol class="bibliography"><li>
+	
+
+ <!-- Manual feats -->
+ <div class="row">
+  <div class="col-sm-2 abbr">
+      </div>
+
+      <div id="charpentier2021collaborative" class="col-sm-8">
+    
+          <div class="title">IME (Insurance: Mathematics and Economics) Congress 2021</div>
+          <div class="author">
+ 			 Collaborative Insurance Sustainability and Network Structure 
+			 
+         <div class="author">
+ 		  <a href="https://github.com/phi-ra/prez/blob/master/academic/presentation_networks_conf.pdf">Slides on GitHub</a>
+ 		 <br>
+ 		 <br>
+  
+  </div>
+  </div>
+  </div>
+  </div>
+  
+  <!-- Manual feats -->
+  <div class="row">
+   <div class="col-sm-2 abbr">
+       </div>
+
+       <div id="charpentier2021collaborative" class="col-sm-8">
+    
+           <div class="title">ASTIN 2021 Colloquium</div>
+           <div class="author">Collaborative Insurance Sustainability and Network Structure			  
+			 
+          <div class="author">
+  		 <a href="https://github.com/phi-ra/prez/blob/master/academic/presentation_networks_conf.pdf">Slides on GitHub</a>
+  		 <br>
+  		 <br>
+  
+   </div>
+   </div>
+   </div>
+   </div>
+ 
+ 
+  
+ 

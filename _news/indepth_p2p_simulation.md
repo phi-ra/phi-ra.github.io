@@ -45,13 +45,13 @@ Now, the simplest idea is to share risk across _all_ edges in the graph, with so
 
 Below are two graphs, depicting the results when we propose a simple one-size-fits-all solution as described above. The brown points and corresponding line are what the loss standard deviation for the agents in the network with no insurance. As expected, this value hovers around $$17\%$$. In green is the loss standard deviation for the agents under the proposed mechanism. Clearly, the mechanism works quite well (ie. reduces the loss standard deviation for the agents) in networks with low degree variance (which is most often assumed in the previous literature) but it may results in outcomes even worse than the no-insurance case. This is due to the almost star-shaped nature of high degree variance networks. There some nodes possess a hughe amount of connections and loading all of them up with contracts results in (obviously) suboptimal results. We will try to alleviate this issue by issuing optimized contracts for each connection (a variable $$\gamma$$ that can effectively be 0)
 
-<img src="/assets/img/img_graphs_.png" alt="drawing" width="800"/>
+<img src="/assets/img/img_graphs_.png" alt="drawing" width="800" class="center"/>
 
 Another issue can be seen on the right. If as much risk as possible is shared with adjacent agents, this might lead to outcomes that are percieved as unfair. Consider the case where nodes C and E have a claim for a total of $$100$$ each. For C, the contracts will be activated with B and D and each of them will contribute up to the specified amount (here 50) to C. But then C can cover the entire loss and pays 0, whereas B and D will need to pay altough they did not even have a claim (note that this might be correct ex-ante if they all have the same risk profile but seems rather unfair ex-post). We can mitigate this issue easily tough. Instead of sharing all the risk directly, we can introduce some self-contribution that nodes need to pay first, before and contracts can be activated. 
 
 The final mechanism can then be summarised as follows (for a node A):
 
-<img src="/assets/img/img_graphs_fin.png" alt="drawing" width="800"/>
+<img src="/assets/img/img_graphs_fin.png" alt="drawing" width="800" class="center"/>
 
 Here node B is willing to share up to $$20\%$$ of its risk with A and C up to $$30\%$$. The contract also has a specified selfcontribution for $$40\%$$. Together this does not cover the entire deductible tough, and A needs to assume the last $$10\%$$ again (in case the claim goes above $$90\%$$ of the deductible). This last layer can be further optimized later on (see eg. [the further research post](/indepth/indepth_p2p_groups/)). 
 
@@ -71,7 +71,7 @@ $$
 
 where $$s$$ is the deductible of the insurance contract and assumed to be the same across all nodes. We then ran 50 simulations for every level of $$\sigma$$ between $$0$$ and $$80$$. The results can be seen below for different amounts of self contributions (1000 means no insurance as the self contribution is equal to the deductible):
 
-<img src="/assets/img/evol-stdev-p2p-opti2.png" alt="drawing" width="800"/>
+<img src="/assets/img/evol-stdev-p2p-opti2.png" alt="drawing" width="800" class="center"/>
 
 Looks much better right?
 

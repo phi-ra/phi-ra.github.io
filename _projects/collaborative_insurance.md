@@ -6,7 +6,8 @@ img: /assets/img/network_img.png
 importance: 9
 category: P2P
 ---
-Some summarised findings from our [Article](https://arxiv.org/abs/2107.02764) on Collaborative Insurance Sustainability and Network Structure
+Some summed up findings from our [Article](https://arxiv.org/abs/2107.02764) on Collaborative Insurance Sustainability and Network Structure. A [poster](https://github.com/phi-ra/prez/blob/master/academic/poster_networks_ssc.pdf) with the main results is also available, for more info dive into the posts below!
+
 <div class="projects">
   {% if site.enable_project_categories and page.display_categories %}
   <!-- Display categorized projects -->

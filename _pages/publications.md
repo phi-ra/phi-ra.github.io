@@ -1,11 +1,17 @@
 ---
 layout: page
-permalink: /publications/
-title: publications
-description: Pre-prints and publications
-years: [2021]
+permalink: /research/
+title: research
+description: Current and past research
+years: [2022, 2021]
 nav: true
 ---
+
+
+<header class="post-header">
+    <h1 class="post-title">pre-prints</h1>
+    <p class="post-description"></p>
+</header>
 
 <div class="publications">
 

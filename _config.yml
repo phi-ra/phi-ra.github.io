@@ -99,7 +99,7 @@ collections:
     defaults:
       layout: post
     output: true
-    permalink: /news/:path/
+    permalink: /indepth/:path/
   projects:
     output: true
     permalink: /projects/:path/

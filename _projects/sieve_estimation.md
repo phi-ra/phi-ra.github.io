@@ -1,13 +1,15 @@
 ---
 layout: page
-title: Collaborative Insurance
-description: Insights for Peer-based Insurance systems
-img: /assets/img/network_img.png
+title: VaR Estimation with sieves
+description: Insights from nonparametric modelling
+img: /assets/img/stock_img.png
 importance: 9
-category: P2P
-display_categories: [P2P]
+display_categories: [sieve]
+category: sieve
 ---
-Some summed up findings from our [Article](https://arxiv.org/abs/2107.02764) on Collaborative Insurance Sustainability and Network Structure. A [poster](https://github.com/phi-ra/prez/blob/master/academic/poster_networks_ssc.pdf) with the main results is also available, for more info dive into the posts below!
+Some summed up findings
+
+
 
 <div class="projects">
   {% if site.enable_project_categories and page.display_categories %}
@@ -21,7 +23,7 @@ Some summed up findings from our [Article](https://arxiv.org/abs/2107.02764) on 
         <div class="container">
           <div class="row row-cols-2">
           {% for project in sorted_projects %}
-		  {% if project.category == "P2P" %}
+		  {% if project.category == "sieve" %}
             {% include projects_horizontal.html %}
 			{% endif %}
           {% endfor %}
@@ -30,7 +32,7 @@ Some summed up findings from our [Article](https://arxiv.org/abs/2107.02764) on 
       {% else %}
         <div class="grid">
           {% for project in sorted_projects %}
-		    {% if project.category == "P2P" %}
+		    {% if project.category == "sieve" %}
 		      {% include projects.html %}
 		    {% endif %}
           {% endfor %}
@@ -46,7 +48,7 @@ Some summed up findings from our [Article](https://arxiv.org/abs/2107.02764) on 
       <div class="container">
         <div class="row row-cols-2">
         {% for project in sorted_projects %}
-		 {% if project.category == "P2P" %}
+		 {% if project.category == "sieve" %}
           {% include projects_horizontal.html %}
 		  {% endif %}
         {% endfor %}
@@ -55,7 +57,7 @@ Some summed up findings from our [Article](https://arxiv.org/abs/2107.02764) on 
     {% else %}
       <div class="grid">
         {% for project in sorted_projects %}
-		 {% if project.category == "P2P" %}
+		 {% if project.category == "sieve" %}
           {% include projects.html %}
 		  {% endif %}
         {% endfor %}

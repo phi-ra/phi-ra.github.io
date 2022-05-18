@@ -1,0 +1,12 @@
+---
+layout: page
+title: Convergence and heuristics
+description: Neural Nets as nonparametric estimators
+img: /assets/img/math_colab_r.png
+importance: 1
+category: sieve
+---
+
+In our [paper](https://arxiv.org/abs/2107.02764), we first explore the stochastic oderings of linear risk sharing before moving on the some fun simulations. The idea of this post is to give a general overview that motivates our choices in the simulation steps. 
+
+

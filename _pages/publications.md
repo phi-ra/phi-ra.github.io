@@ -66,7 +66,7 @@ nav: true
 
       <div id="ratz_sieve" class="col-sm-8">
     
-          <div class="title">VieCo on Financial Econometrics 2022</div>
+          <div class="title">CSSC Annual Meeting 2022</div>
           <div class="author">
  			 Collaborative Insurance Sustainability and Network Structure 
 			 

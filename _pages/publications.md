@@ -38,6 +38,27 @@ nav: true
 <h2 class="year">2022</h2>
 <ol class="bibliography"><li>
 	
+    <!-- Manual feats -->
+    <div class="row">
+     <div class="col-sm-2 abbr">
+         </div>
+
+         <div id="ratz_sieve" class="col-sm-8">
+    
+             <div class="title">CFE/CMS Conference</div>
+             <div class="author">
+    			 Invited Session: Recent Developments in Modelling and Forecasting Extremes
+			 
+            <div class="author">
+    		  <a href="https://github.com/phi-ra/prez/blob/master/academic/cfe_prez.pdf">Slides on GitHub</a>
+    		 <br>
+    		 <br>
+  
+     </div>
+     </div>
+     </div>
+     </div>
+	
  <!-- Manual feats -->
  <div class="row">
   <div class="col-sm-2 abbr">
@@ -45,7 +66,30 @@ nav: true
 
       <div id="ratz_sieve" class="col-sm-8">
     
-          <div class="title">VieCo on Financial Econometrics 2022</div>
+          <div class="title">Informs Annual Meeting</div>
+          <div class="author">
+ 			 Invited Session: Decentralized Insurance
+			 
+         <div class="author">
+ 		  <a href="https://github.com/phi-ra/prez/blob/master/academic/networks_informs.pdf">Slides on GitHub</a>
+ 		 <br>
+ 		 <br>
+  
+  </div>
+  </div>
+  </div>
+  </div>
+	
+	
+	
+ <!-- Manual feats -->
+ <div class="row">
+  <div class="col-sm-2 abbr">
+      </div>
+
+      <div id="ratz_sieve" class="col-sm-8">
+    
+          <div class="title">VieCo on Financial Econometrics</div>
           <div class="author">
  			 Nonparametric VaR Forecasting via Sieves
 			 
@@ -66,7 +110,7 @@ nav: true
 
       <div id="ratz_sieve" class="col-sm-8">
     
-          <div class="title">CSSC Annual Meeting 2022</div>
+          <div class="title">CSSC Annual Meeting</div>
           <div class="author">
  			 Collaborative Insurance Sustainability and Network Structure 
 			 

@@ -10,7 +10,7 @@ tags: [neural networks, statistics, convergence, bias-variance tradeoff] # add t
 
 
 
-Neural Networks perform well, but how well? Using a statistical framework permits the caluclation of the _order of convergence_, or to be precise, an upper bound on this order. Some time ago I wrote my Master Thesis on the subject and I decided to post a short summary of some key insights here, lest I might lose track of the basics myself. If you are interested in the whole story, visit my [github repo](https://github.com/phi-ra/sieve_forecasting) with the whole thesis and code. This post does not have the goal to be as precise as possible, but to convey the general idea behind the calculations. For precises conditions on eg. function spaces or mixing conditions, the reader is referred to the thesis itself. 
+Neural Networks perform well, but how well? Using a statistical framework permits the caluclation of the _order of convergence_, or to be precise, an upper bound on this order. Some time ago I wrote my Master Thesis on the subject and I decided to post a short summary of some key insights here, lest I might lose track of the basics myself. If you are interested in the whole story, visit my [github repo](https://github.com/phi-ra/sieve_forecasting) with the whole thesis and code. This post does not have the goal to be as precise as possible, but to convey the general idea behind the calculations. For precise conditions on eg. function spaces or mixing conditions, the reader is referred to the thesis itself. 
 
 # Considering ANNs as Nonparametric Estimators
 

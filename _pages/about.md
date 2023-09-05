@@ -3,7 +3,6 @@ layout: about
 title: about
 permalink: /
 description: PhD Student at <a href="https://math.uqam.ca/" target="_blank">UQAM</a>
-
 profile:
   align: right
   image: phi_ra.png

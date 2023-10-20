@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://phi-ra.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://phi-ra.github.io/" rel="alternate" type="text/html" /><updated>2023-10-20T03:06:50+00:00</updated><id>https://phi-ra.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+</subtitle><entry><title type="html">Understanding pandemic modeling</title><link href="https://phi-ra.github.io/blog/2020/understanding-the-pandemic/" rel="alternate" type="text/html" title="Understanding pandemic modeling" /><published>2020-05-26T12:12:00+00:00</published><updated>2020-05-26T12:12:00+00:00</updated><id>https://phi-ra.github.io/blog/2020/understanding-the-pandemic</id><content type="html" xml:base="https://phi-ra.github.io/blog/2020/understanding-the-pandemic/"><![CDATA[<h1 id="disclaimer">Disclaimer</h1>
+
+<p>Recently, I participated in a hackathon against Covid-19. We were interest in modelling the pandemic, or to be precise, some possible outcomes. Note that the idea here is <strong>not</strong> to provide an accurent model for the pandemic. It only represents a statisticians first contact with epidemological research and aims to explain it in my own terms. As we used graphs to model the scenario, it was also a place where I could employ some of the more theoretical research. Since the pandemic concernes us all, I tried to use no math in this article.</p>
+
+<p>If you want precise modelling, ask the pros (a.k.a. your fav epidemologist)</p>
+
+<h1 id="understanding-the-pandemic">Understanding the Pandemic</h1>
+
+<p>In its simplest form, we can think of the pandemic as the result from a virus that can be transmitted from human to human. If you get the virus, you can either recover or die from it. In a subset of the period where you are infected but not yet recovered or dead, you can in addition infect other people around you. This is where the (by now) famous \(R\)-value or reproduction value comes in. If you are not the only one infected by the disease, we can take an average of the number of people that are infected from a single person.</p>
+
+<p>If you just think about that for a minute, it becomes clear how difficult it must be to calculate this value. We must first identify <em>all</em> agents who carry the virus at any given moment (which might not be easy given not all cases are symptomatic), then all who were infected by any one agent and finally find an average which by definition will already be outdated at the time of publication.</p>
+
+<p>This in itself is already interesting, and something that people a lot more competent than I spend a lot of time thinkg about, but not the problem we try to visualize here. As this is still the beginning of the pandemic, we would like to remind everyone that his or her behaviour has direct consequences on everyone (there is a reason why this whole hackathon was done online). In the follwoing we will go through the simplest of epidemological models, and being in the nice mathematical framework, we can try to simulate how the pandemic could turn out if everyone <em>acts like you</em>. This also has the advantage of providing global parameters for our models (which means it might be far from reality, but that is not the point of the engine you can find further down in this article).</p>
+
+<h1 id="how-to-model-all-of-this">How to model all of this</h1>
+
+<p>We already saw a few things that need to be modelled if we are to understand the pandemic. But lets put that aside for a minute and look at one of the basic epidemological models: The SIR-Model. SIR stands for __S__usceptible, __I__nfectious and __R__ecovered and goes back all the way the 1920’s where Kermack and McKendrick published the general idea in a subsection of their paper.</p>
+
+<p>The SIR-Model is part of the <em>Compartemental Models</em> Family, and it is just that. Agents can be classified into compartements (eg. S,I,R). This might seem rather restrictive, but it can be extendend. For example, for our engine, we consider the following:</p>
+
+<ol>
+  <li>Each agent is either Susceptible, Infectious, Recovered or Dead</li>
+  <li>If an agent is Recovered, she has limited immunity from being reinfected (in our simple world, we use a Bernoulli trial)</li>
+  <li>If an agent is Infectious, he infects his contacts with a probability \(p\) (again, we can use a Bernoulli trial)</li>
+  <li>If an agent is Infected, she can develop complications with probability \(u\), this probability can be dependent on eg. the age of the agent.</li>
+  <li>If an agent has developed complications, he can die with probability \(q\) (again, you guessed it, we can model this using a Bernoulli trial). Here we have a small gist though. As the main message from the governments around the world is to stay home “to flatten the curve” the value \(q\) is adaptive. If hospitals are overcrowded, (ie when too many agents are infected and hence too many develop complications) the value for \(q\) rises.</li>
+</ol>
+
+<p>So these are the basics. There are some numbers that need to be estimated (eg. the probability of transmission etc.), we opted to take them from the literature (there are references in the <a href="https://github.com/phi-ra/ActLikeMe">git-repo</a>). Next, we decided to model the population with a clustered graph.</p>
+
+<p>The idea is that we model the whole population (in our case of Switzerland) in the same fashion as a representative agent (ie. the user of our tool). Usually this would be deemed oversimplistic but here we actually want to show what would happen if everyone acted like oneself (hence the engine-name ActLikeMe). Each node in the graph has a random number of edges, but the average degree is decided by the user (eg. the answer to the question “how many contacts do you have”). The nodes are then slightly clustered to simulate eg. family or friendship ties (eg. there are more densly connected subgroups within the graph), but the graph stays connected (there are no insular nodes). A few agents are then infected and the model is run for subsequent periods (see the .gif below) until everyone is either recovered or dead (how grim). Statistics can then be calculated based on what happend in every period.</p>
+
+<h1 id="the-actlikeme-engine">The ActLikeMe Engine</h1>
+
+<p>Finally we got the engine to run. A user can enter parameters about her behaviour and the graph is constructed according to those. The SIR model is then run, the data saved and finally displayed over a R-Shiny App. And all that was done in less than 48 hours!</p>
+
+<p>As said, it might not be precise in epidemological terms, but the gist of ones own behaviour should be clear. Its not only a matter of the some to stop the pandemic, its something where everyone needs to participate!</p>
+
+<p><img src="/assets/img/actlikeme.gif" alt="Fig 1. Engine" />
+Agents are green if they are susceptible, red when they are infectious, yellow when infected but not infectuous, grey when recovered and black when dead</p>
+
+<p><img src="/assets/img/curve_2.png" alt="Fig 2. Dashboard" /></p>]]></content><author><name></name></author><category term="covid-19" /><category term="epidemiology" /><summary type="html"><![CDATA[A crashcourse for epidemiological modeling]]></summary></entry><entry><title type="html">The convergence of neural networks</title><link href="https://phi-ra.github.io/blog/2020/convergence-of-neural-networks/" rel="alternate" type="text/html" title="The convergence of neural networks" /><published>2020-05-25T20:12:00+00:00</published><updated>2020-05-25T20:12:00+00:00</updated><id>https://phi-ra.github.io/blog/2020/convergence-of-neural-networks</id><content type="html" xml:base="https://phi-ra.github.io/blog/2020/convergence-of-neural-networks/"><![CDATA[<p>Neural Networks perform well, but how well? Using a statistical framework permits the caluclation of the <em>order of convergence</em>, or to be precise, an upper bound on this order. Some time ago I wrote my Master Thesis on the subject and I decided to post a short summary of some key insights here, lest I might lose track of the basics myself. If you are interested in the whole story, visit my <a href="https://github.com/phi-ra/sieve_forecasting">github repo</a> with the whole thesis and code. This post does not have the goal to be as precise as possible, but to convey the general idea behind the calculations. For precise conditions on eg. function spaces or mixing conditions, the reader is referred to the thesis itself.</p>
+
+<h1 id="considering-anns-as-nonparametric-estimators">Considering ANNs as Nonparametric Estimators</h1>
+
+<p>To develop asymptotic theory, it is easiest to integrate ANNs into the nonparametric framework. Here, we will focus on the single-hidden-layer ANNs because they are rather easy to manipulate, the results however, generalize to the multilayer case as well.</p>
+
+<h2 id="the-parametric-form-of-anns">The parametric form of ANNs</h2>
+
+<p>Basic ANNs can easily be written in their parametric form.</p>
+
+\[f(x, \theta) = F\bigg(\beta_0 + \sum_{k=1}^{m}G(\tilde{x}'\gamma_k)\beta_k\bigg),\]
+
+<p>where \(m\) is the number of hidden units in the hidden layer.</p>
+
+<h2 id="the-bias-variance-tradeoff">The Bias Variance Tradeoff</h2>
+
+<h2 id="sieve-estimators">Sieve Estimators</h2>
+
+<p>The basic idea of sieve estimation is to use increasingly more complex versions of a base model as more data becomes available. This might sound weird but the rationale behind it is quite simple. Imagine that we want to approximate some unknown function \(f(x)\) on \([a,b]\). With just a few datapoints we might try to approximate the function with an intercept and a slope:</p>
+
+\[f(x) \approx w_0x^0 + w_1x^1,\]
+
+<p>where w are some weights. The approximation will be quite rough, but we could add more polynomial terms. We known from <a href="https://en.wikipedia.org/wiki/Stone-Weierstrass_theorem">Stone-Weierstrass</a> that we can uniformly approximate a continuous function to any desired degree of accuracy with an increasing number of polynomial terms. In the real world, unfortunately, we always have some kind of noise present in the data and just adding more and more terms to a regression equation usually results in strong overfitting. Below is a small graph that shows the approximation properties of a simple linear regression and its polynomial equivalent for polynomial order 2, 5 and 10.</p>
+
+<p><img src="/assets/img/graph_polynomial.png" alt="Fig 1. Approximation via polynomials" /></p>
+
+<p>Sieve estimation builds on exactly these two principles. With a suitable base function we will try to approximate a function of interest but keep in mind the bias-variance tradeoff. With more and more data points available, it will become easier to differentiate noise from signal and hence we can allow the equation to contain more terms (and make it therefore more flexible).</p>
+
+<p>To put this into slightly more mathematical terms, we have</p>
+
+\[y_t=\psi_0(x_t) + \varepsilon_t, \quad \mathbb{E}[\varepsilon_t|x_t] = 0,\]
+
+<p>for simplicity we assume \(y_t, \varepsilon_t, x_t \in \mathbb{R}\). With the standard least squares approach, the optimal estimator can be written as:</p>
+
+\[\hat{\psi}(\cdot) = \arg\min_{\psi(\cdot) \in \Psi}\frac{1}{n}\sum_{t=1}^{n}(y_t - \psi(x_{t}))^2\]
+
+<p>In usual parametric settings, the functional space of \(\Psi\) is limited to a specific form and the parameter vector bound in some (fixed) space \(\mathbb{R}^p\). But, if we assume for example that \(\Psi = =\mathcal{C}^2(\mathbb{R}),\) the space of twice continuously differentiable function on \(\mathbb{R}\), the optimization problem is no longer well posed (as even if we had the possibility of searching over the whole \(\Psi\), there might exists an infinite number of solutions). The sieve approach consists of replacing \(\Psi\) with a series of increasingly complex <em>sieve fuctions</em> that are of a lower dimension. This can be expressed as:</p>
+
+\[\psi \in \Psi_d = \big{\{}f:f(x;\theta)=\sum_{d=1}^{r_n}\theta_d\mathcal{G}_d(x) \big{\}} \quad ,\]
+
+<p>where \(d\) is the dimensionality of the sieve and \(\mathcal{G}\) are the so called <em>base functions</em>. There are some conditions on \(\mathcal{G}\) but the one to remember is that the base functions must be dense in the original space. As we saw above, polynomials are dense in the original space (at least in the limit) and as it turns out, already a single hidden layer of an ANN can be too! The use of this is straight forward, by using theoretical approaches derived for other sieve estimators, we can pin down the rate of convergence of neural networks! Because we would have had an <em>infeasible</em> estimation problem we can render the problem into a <em>feasible</em> problem. By acknowledging that in the limit our estimator can approximate any desired function in the specified space but “pretending” to approximate it only in a lower dimesion we can calculate some convergence properties. Our feasible problem then looks somewhat like:</p>
+
+\[\hat{\psi}(\cdot) = \arg \min_{\theta \in \Theta_d}\frac{1}{n}\sum_{t=1}^{n}(y_t - \psi_d(x_t))^2\]
+
+<p>In a sense we say that we cannot estimate the “true” \(\psi_0\) but we can estimate a lower dimensional version \(\psi_d\) which, in the limit as \(n \rightarrow \infty \quad \psi_d = \psi_0\). To have well defined properties, we need some conditions of course. For example (and quite obviously) the approximation spaces \(\Theta_d\) must be compact and nondecreasing in \(d\) and \(\Theta_d \subseteq \Theta\). And we must also observe that:</p>
+
+\[\frac{1}{r_n}\rightarrow 0 \quad \text{and} \quad \frac{r_n}{n}\rightarrow 0 \quad \text{as } n \rightarrow \infty\]
+
+<p>This ensures that the parameter space is infinite in the limit but that the parameter space increases <em>slower</em> than the sample size. If you are familiar with nonparametric kernel regression these conditions should seem rather familiar. Compared to kernel regression, sieve estimation has the benefit that they are <em>global</em> estimates and not just local approximations (ie. they approximate the function over the whole set of data points).</p>
+
+<h2 id="the-order-of-convergence">The order of convergence</h2>
+
+<p>For a single hidden layer ANN with ReLU activation functions, the order of convergence can be expressed as:</p>
+
+\[||\hat{\theta}_n - \theta_0|| = \mathcal{O}\bigg{(}[n/\log(n)]^\frac{-(1+\frac{2}{d+1})}{4(1+\frac{1}{1+d})}\bigg{)} ,\]
+
+<p>where \(d\) is the input dimension and \(n\) is the sample size.</p>
+
+<h1 id="some-implications">Some implications</h1>
+
+<p>Usually this is the moment when any non-statistician would ask, “so what”?. A tentative answer can be found in the following graphic. Here we compare the above deducted convergence rate to that of a standard nonparametric kernel estimator. It can be expressed as:</p>
+
+\[\mathcal{O} \bigg{(}n^{\frac{-2*\text{order}}{2*\text{order} + \text{dimension}}} \bigg{)}\]
+
+<p>If we compare their convergences for specific values (altough this is technically not correct - as we excluded a constant in the big-oh term) we get the following graph:
+<img src="/assets/img/graph_conv.png" alt="Fig 2. Convergence Rate" /></p>
+
+<p>Here we can see the big-oh term given a set of dimension-N (N represents the size of the data). For lower dimensions, the grey surface representing the the big-oh term for the kernel estimator is lower than the dark surface, but only for low values in the dimensions. It seems that the sieve estimators are a lot less sensistive to the curse of dimensionality. Which in turn could help exlplain their popularity in text- and image mining (where dimensions are extremely high). On the other hand, Neural Networks failed spectacularly for low-dimensional time series predictions in, for example, the M4 competition (see eg. <a href="https://doi.org/10.1016/j.ijforecast.2019.04.014">the corresponding paper</a>)</p>]]></content><author><name></name></author><category term="neural networks" /><category term="statistics" /><category term="convergence" /><category term="bias-variance tradeoff" /><summary type="html"><![CDATA[A post about the convergence properties of simple neural networks]]></summary></entry></feed>

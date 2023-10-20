@@ -12,7 +12,7 @@
   Philipp  Ratz
 
 
-  | blog
+  | projects
 
 </title>
 <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
@@ -38,7 +38,7 @@
 <link rel="icon" href="/phi_logo.ico">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -109,11 +109,9 @@
           </li>
           
           <!-- Blog -->
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="/blog/">
               blog
-              
-              <span class="sr-only">(current)</span>
               
             </a>
           </li>
@@ -130,9 +128,11 @@
           
           
           
-          <li class="nav-item ">
+          <li class="nav-item active">
               <a class="nav-link" href="/projects/">
                 projects
+                
+                <span class="sr-only">(current)</span>
                 
               </a>
           </li>
@@ -179,8 +179,8 @@
           
           
           
-            <div class = "toggle-container">
-              <a id = "light-toggle">
+            <div class="toggle-container">
+              <a id="light-toggle">
                   <i class="fas fa-moon"></i>
                   <i class="fas fa-sun"></i>
               </a>
@@ -199,30 +199,86 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1>blog</h1>
-    <h2>some (not only) academic posts</h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">projects</h1>
+    <p class="post-description">Some recent projects</p>
+  </header>
 
+  <article>
+    <div class="projects">
+  
+  <!-- Display categorized projects -->
+    
+      <h2 class="category">work</h2>
+      
+      
+      <!-- Generate cards for each project -->
+      
+        <div class="grid">
+          
+		    
+		      <div class="grid-item">
+  
+  <a href="/projects/graph_problems/">
+  
+    <div class="card hoverable">
+      
+      <img src="/assets/img/comm_netw_small.jpeg" alt="project thumbnail">
+      
+      <div class="card-body">
+        <h2 class="card-title text-lowercase">Graphs</h2>
+        <p class="card-text">Research on Networks</p>
+        <div class="row ml-1 mr-1 p-0">
+          
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
 
-  <ul class="post-list">
+		    
+          
+		    
+		      <div class="grid-item">
+  
+  <a href="/projects/semi_nonparametrics/">
+  
+    <div class="card hoverable">
+      
+      <img src="/assets/img/graph_polynomial.png" alt="project thumbnail">
+      
+      <div class="card-body">
+        <h2 class="card-title text-lowercase">Semi- and non-parametrics</h2>
+        <p class="card-text">Neural Nets for Statisticians</p>
+        <div class="row ml-1 mr-1 p-0">
+          
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
+
+		    
+          
+        </div>
+      
     
-      <li>
-        <h3><a class="post-title" href="/blog/2020/understanding-the-pandemic/">Understanding pandemic modeling</a></h3>
-        <p class="post-meta">May 26, 2020</p>
-        <p>A crashcourse for epidemiological modeling</p>
-      </li>
+      <h2 class="category">fun</h2>
+      
+      
+      <!-- Generate cards for each project -->
+      
+        <div class="grid">
+          
+        </div>
+      
     
-      <li>
-        <h3><a class="post-title" href="/blog/2020/convergence-of-neural-networks/">The convergence of neural networks</a></h3>
-        <p class="post-meta">May 25, 2020</p>
-        <p>A post about the convergence properties of simple neural networks</p>
-      </li>
-    
-  </ul>
 
   
 
+</div>
+
+  </article>
 
 </div>
 
@@ -233,8 +289,8 @@
     
 <footer class="fixed-bottom">
   <div class="container mt-0">
-    &copy; Copyright 2023 Philipp  Ratz.
-    Based on <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+    © Copyright 2023 Philipp  Ratz.
+    Based on <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.
 
     
     
